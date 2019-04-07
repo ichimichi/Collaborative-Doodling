@@ -1,7 +1,8 @@
-package com.softwareengineeringproject.collaborativedoodling
+package com.softwareengineeringproject.collaborativedoodling.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.softwareengineeringproject.collaborativedoodling.R
 
 class MainActivity : AppCompatActivity() {
 
