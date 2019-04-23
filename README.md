@@ -4,7 +4,7 @@
 
 ### TABLE OF CONTENTS ###
 
-* Abstract
+* [Abstract](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/ABSTRACT.md)
 * Introduction
     * Motivation
     * Objectives
