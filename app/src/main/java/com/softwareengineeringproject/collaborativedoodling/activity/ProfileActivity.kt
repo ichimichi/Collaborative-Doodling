@@ -1,17 +1,16 @@
 package com.softwareengineeringproject.collaborativedoodling.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import com.softwareengineeringproject.collaborativedoodling.R
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_profile.*
 
-class MainActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_profile)
 
         val user = FirebaseAuth.getInstance().currentUser
         user?.let {
@@ -28,16 +27,9 @@ class MainActivity : AppCompatActivity() {
             // FirebaseUser.getToken() instead.
             val uid = user.uid
 
-            titleTV.text = " Hi, $name !"
+            nameTV.text = name
+            emailTV.text = email
 
         }
-
-        savedDoodleBtn.setOnClickListener{
-            val intent = Intent(this,ProfileActivity::class.java)
-            startActivity(intent)
-        }
-
     }
-
-
 }
