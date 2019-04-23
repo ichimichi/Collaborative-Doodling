@@ -5,12 +5,12 @@
 ### TABLE OF CONTENTS ###
 
 * [Abstract](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/ABSTRACT.md)
-* Introduction
-    * Motivation
-    * Objectives
-    * Methodology
-    * Main Contributions
-    * Document Outline
-* Implementation Details
-* Conclusion
-* Bibliography
+* [Introduction](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/INTRODUCTION.md)
+    * [Motivation](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/MOTIVATION.md)
+    * [Objectives](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/OBJECTIVES.md)
+    * [Methodology](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/METHODOLOGY.md)
+    * [Main Contributions](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/MAIN_CONTRIBUTIONS.md)
+    * [Document Outline](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/DOCUMENT_OUTLINE.md)
+* [Implementation Details](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/IMPLEMENTATION_DETAILS.md)
+* [Conclusion](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/CONCLUSION.md)
+* [Bibliography](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/BIBILIOGRAPHY.md)
