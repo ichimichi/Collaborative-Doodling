@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        newDoodleBtn.setOnClickListener {
+            val intent = Intent(this,DoodlingActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 
