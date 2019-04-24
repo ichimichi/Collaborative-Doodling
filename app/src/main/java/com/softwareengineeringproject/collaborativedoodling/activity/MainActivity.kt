@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         savedDoodleBtn.setOnClickListener{
-            val intent = Intent(this,ProfileActivity::class.java)
+            val intent = Intent(this,SavedDoodleActivity::class.java)
             startActivity(intent)
         }
 
@@ -41,6 +41,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,DoodlingActivity::class.java)
             startActivity(intent)
         }
+
+        profileBtn.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 
