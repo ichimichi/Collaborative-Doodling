@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:padding="20dp
+"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent" android:textAlignment="center">
+
+    <Button
+        android:text="Google"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/google"
+        android:textColor="@color/fui_bgGoogle"
+        android:background="@drawable/google_button"
+        android:paddingLeft="20dp"
+        android:id="@+id/googleBtn"
+        tools:layout_editor_absoluteY="471dp" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" android:layout_marginStart="60dp" android:layout_marginEnd="60dp"
+        android:textAlignment="gravity" android:gravity="center" android:textSize="18sp"/>
+
+    <Button
+        android:text="Email"
+        android:textColor="@color/fui_bgGoogle"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:drawableLeft="@drawable/mail"
+        android:background="@drawable/mail_button"
+        android:paddingLeft="20dp"
+        android:id="@+id/emailBtn"
+        tools:layout_editor_absoluteY="360dp" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" android:layout_marginStart="60dp" android:layout_marginEnd="60dp"
+        android:textSize="18sp" android:textAlignment="center" android:gravity="center|center_horizontal"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="41dp"
+              android:id="@+id/titleTV"
+              android:text="Login"
+              tools:layout_editor_absoluteY="88dp" android:textSize="30sp" android:gravity="center"
+              android:textAlignment="center"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

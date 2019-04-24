@@ -8,8 +8,10 @@ import android.widget.Toast
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
-import com.softwareengineeringproject.collaborativedoodling.R
 import kotlinx.android.synthetic.main.activity_login.*
+import com.firebase.ui.auth.AuthMethodPickerLayout
+import com.softwareengineeringproject.collaborativedoodling.R
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -48,11 +50,17 @@ class LoginActivity : AppCompatActivity() {
             AuthUI.IdpConfig.GoogleBuilder().build()
         )
 
+        val customLayout = AuthMethodPickerLayout.Builder(R.layout.custom_login)
+            .setGoogleButtonId(R.id.googleBtn)
+            .setEmailButtonId(R.id.emailBtn)
+            .build()
+
         // Create and launch sign-in intent
         startActivityForResult(
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
+                .setAuthMethodPickerLayout(customLayout)
                 .build(),
             RC_SIGN_IN
         )
