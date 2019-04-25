@@ -19,13 +19,13 @@
     <!--</LinearLayout>-->
     <TextView
         android:text="Welcome"
-        android:layout_width="112dp"
-        android:layout_height="29dp"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
         android:id="@+id/titleTV"
         android:layout_marginTop="56dp"
         app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-        android:textSize="18sp"/>
+        android:textSize="18sp" android:textAlignment="center" android:gravity="center"/>
 
     <Button
         android:text="Feed"

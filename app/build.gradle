@@ -42,6 +42,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     // Firebase Realtime Database
     implementation 'com.google.firebase:firebase-database:16.0.4'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 
 }
