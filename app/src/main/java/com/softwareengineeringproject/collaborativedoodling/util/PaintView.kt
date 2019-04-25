@@ -9,7 +9,8 @@ import android.view.MotionEvent
 import android.view.View
 import com.google.firebase.database.*
 import com.softwareengineeringproject.collaborativedoodling.model.Instruction
-import java.util.concurrent.CancellationException
+import android.graphics.Bitmap
+
 
 class PaintView : View {
 
