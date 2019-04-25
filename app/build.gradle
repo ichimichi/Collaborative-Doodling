@@ -36,10 +36,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.8'
     // Firebase UI
     implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
-    //Firebase Auth
+    // Firebase Auth
     implementation 'com.google.firebase:firebase-auth:16.2.1'
     // Google Sign-in
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    // Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-database:16.0.4'
 
 
 }
