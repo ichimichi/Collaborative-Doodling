@@ -1,6 +1,5 @@
 package com.softwareengineeringproject.collaborativedoodling.activity
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -12,7 +11,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.softwareengineeringproject.collaborativedoodling.R
 import kotlinx.android.synthetic.main.activity_doodling.*
-
 
 
 class DoodlingActivity : AppCompatActivity() {
@@ -33,24 +31,8 @@ class DoodlingActivity : AppCompatActivity() {
         windowManager.defaultDisplay.getMetrics(metrics)
         paintView.init(metrics)
 
-        activeUsers.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(error: DatabaseError) {
-                Log.w("error", "Failed to read value.", error.toException())
-            }
+        activeUsers.addValueEventListener(newUserEventListener)
 
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val td = dataSnapshot.value as HashMap<String, String>
-
-                val listOfActiveUsers = ArrayList(td.values)
-
-                activeUsersListTV.text = ""
-
-                for( user: String in listOfActiveUsers){
-                    activeUsersListTV.append("$user\n")
-                }
-
-            }
-        })
 
         clearBtn.setOnClickListener {
             paintView.clear()
@@ -78,8 +60,28 @@ class DoodlingActivity : AppCompatActivity() {
 
     }
 
+    private val newUserEventListener = object : ValueEventListener {
+        override fun onCancelled(error: DatabaseError) {
+            Log.w("error", "Failed to read value.", error.toException())
+        }
+
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            val td = dataSnapshot.value as HashMap<String, String>
+
+            val listOfActiveUsers = ArrayList(td.values)
+
+            activeUsersListTV.text = ""
+
+            for( user: String in listOfActiveUsers){
+                activeUsersListTV.append("$user\n")
+            }
+
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
+        activeUsers.removeEventListener(newUserEventListener)
         key.removeValue()
     }
 }
