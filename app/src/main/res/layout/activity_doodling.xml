@@ -72,4 +72,12 @@
         app:layout_constraintStart_toEndOf="@+id/colorWhiteBtn"
         android:layout_marginStart="8dp"/>
 
+    <TextView
+        tools:text="Users List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activeUsersListTV"
+        android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

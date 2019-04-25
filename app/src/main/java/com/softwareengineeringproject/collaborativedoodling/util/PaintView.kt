@@ -62,6 +62,7 @@ class PaintView : View {
 
         database = FirebaseDatabase.getInstance()
         drawingInstruction = database!!.getReference("drawingInstruction")
+
         drawingInstruction!!.addValueEventListener( object: ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 Log.w("error", "Failed to read value.", error.toException())
@@ -71,7 +72,7 @@ class PaintView : View {
                 val value = dataSnapshot.getValue(Instruction::class.java)
                 Log.d("command", value.toString())
 
-                currentColor = value!!.color
+
 
                 when(value!!.command){
                     "init"->{
@@ -91,6 +92,9 @@ class PaintView : View {
                         invalidate()
                         instruction.command = "init"
                         drawingInstruction!!.setValue(instruction)
+                    }
+                    "changeColor"->{
+                        currentColor = value!!.color
                     }
                 }
             }
@@ -167,7 +171,6 @@ class PaintView : View {
 
         instruction.x = x
         instruction.y = y
-        instruction.color = currentColor
 
 
         when(event.action){
@@ -202,6 +205,9 @@ class PaintView : View {
 
     fun changeColor(color : String){
         currentColor = Color.parseColor(color)
+        instruction.color = currentColor
+        instruction.command = "changeColor"
+        drawingInstruction!!.setValue(instruction)
     }
 
 }
