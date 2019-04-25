@@ -4,8 +4,11 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import com.google.firebase.database.*
+import com.softwareengineeringproject.collaborativedoodling.model.Instruction
 import java.util.concurrent.CancellationException
 
 class PaintView : View {
@@ -28,6 +31,8 @@ class PaintView : View {
     private var mBitmap: Bitmap? = null
     private var mCanvas: Canvas? = null
     private var mBitmapPaint: Paint? = Paint(Paint.DITHER_FLAG)
+    private var database: FirebaseDatabase? = null
+    private var drawingInstruction: DatabaseReference? = null
 
 
     constructor(context: Context?) : super(context, null)
@@ -44,6 +49,7 @@ class PaintView : View {
     }
 
     fun init(metrics: DisplayMetrics) {
+        Log.v("PaintView","init()")
         val height = metrics.heightPixels
         val width = metrics.widthPixels
 
@@ -52,6 +58,37 @@ class PaintView : View {
 
         currentColor = DEFAULT_COLOR
         strokeWidth = BRUSH_SIZE
+
+        database = FirebaseDatabase.getInstance()
+        drawingInstruction = database!!.getReference("drawingInstruction")
+        drawingInstruction!!.addValueEventListener( object: ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                Log.w("error", "Failed to read value.", error.toException())
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val value = dataSnapshot.getValue(Instruction::class.java)
+                Log.d("command", value.toString())
+                when(value!!.command){
+                    "init"->{
+                    }
+                    "touchStart"->{
+                        touchStart(value.x!!,value.y!!)
+                        invalidate()
+
+                    }
+                    "touchMove"->{
+                        touchMove(value.x!!,value.y!!)
+                        invalidate()
+
+                    }
+                    "touchUp"->{
+                        touchUp()
+                        invalidate()
+                    }
+                }
+            }
+        })
     }
 
     fun clear() {
@@ -62,6 +99,8 @@ class PaintView : View {
 
     override fun onDraw(canvas: Canvas?) {
 //        super.onDraw(canvas)
+        Log.v("PaintView","onDraw()")
+
         canvas!!.save()
         mCanvas!!.drawColor(backgroundColor!!)
 
@@ -74,11 +113,23 @@ class PaintView : View {
 
         }
 
+
         canvas.drawBitmap(mBitmap!!, 0F, 0F, mBitmapPaint)
         canvas.restore()
     }
 
     private fun touchStart(x: Float, y: Float) {
+        Log.v("PaintView","touchStart()")
+//        drawingInstruction!!.child("command").setValue("touchStart")
+//        drawingInstruction!!.child("x").setValue(x)
+//        drawingInstruction!!.child("y").setValue(y)
+//
+//        val instruction: Instruction = Instruction()
+//        instruction.command = "touchStart"
+//        instruction.x = x
+//        instruction.y = y
+//        drawingInstruction!!.setValue(instruction)
+
         mPath = Path()
         var fp: FingerPath = FingerPath(currentColor!!, strokeWidth!!, mPath!!)
         paths.add(fp)
@@ -90,8 +141,12 @@ class PaintView : View {
     }
 
     private fun touchMove(x: Float, y: Float) {
+        Log.v("PaintView","touchMove()")
+
         var dx: Float = Math.abs(x - mX!!)
         var dy: Float = Math.abs(y - mY!!)
+
+
 
         if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
             mPath!!.quadTo(mX!!, mY!!, (x + mX!!) / 2, (y + mY!!) / 2)
@@ -102,6 +157,16 @@ class PaintView : View {
     }
 
     private fun touchUp() {
+        Log.v("PaintView","touchUp()")
+//        drawingInstruction!!.child("command").setValue("touchUp")
+//        drawingInstruction!!.child("x").setValue(x)
+//        drawingInstruction!!.child("y").setValue(y)
+//        val instruction: Instruction = Instruction()
+//        instruction.command = "touchUp"
+//        instruction.x = x
+//        instruction.y = y
+//        drawingInstruction!!.setValue(instruction)
+
         mPath!!.lineTo(mX!!,mY!!)
     }
 
@@ -109,16 +174,34 @@ class PaintView : View {
         var x = event!!.getX()
         var y = event!!.getY()
 
+        Log.v("PaintView","onTouchEvent()")
+
+        val instruction: Instruction = Instruction()
+
+
+
         when(event.action){
             MotionEvent.ACTION_DOWN -> {
+                instruction.command = "touchStart"
+                instruction.x = x
+                instruction.y = y
+                drawingInstruction!!.setValue(instruction)
                 touchStart(x,y)
                 invalidate()
             }
             MotionEvent.ACTION_MOVE -> {
+                instruction.command = "touchMove"
+                instruction.x = x
+                instruction.y = y
+                drawingInstruction!!.setValue(instruction)
                 touchMove(x,y)
                 invalidate()
             }
             MotionEvent.ACTION_UP -> {
+                instruction.command = "touchUp"
+                instruction.x = x
+                instruction.y = y
+                drawingInstruction!!.setValue(instruction)
                 touchUp()
                 invalidate()
             }
@@ -126,4 +209,5 @@ class PaintView : View {
         }
         return true
     }
+
 }
