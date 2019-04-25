@@ -7,7 +7,8 @@ class Instruction {
     var command : String? = ""
     var x : Float? = 0.0F
     var y : Float? = 0.0F
+    var color : Int? = 0
     override fun toString(): String {
-        return "$command + $x + $y"
+        return "$command + $x + $y + $color"
     }
 }

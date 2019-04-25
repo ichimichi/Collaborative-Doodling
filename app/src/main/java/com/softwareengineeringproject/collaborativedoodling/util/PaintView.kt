@@ -33,6 +33,7 @@ class PaintView : View {
     private var mBitmapPaint: Paint? = Paint(Paint.DITHER_FLAG)
     private var database: FirebaseDatabase? = null
     private var drawingInstruction: DatabaseReference? = null
+    val instruction: Instruction = Instruction()
 
 
     constructor(context: Context?) : super(context, null)
@@ -69,6 +70,9 @@ class PaintView : View {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val value = dataSnapshot.getValue(Instruction::class.java)
                 Log.d("command", value.toString())
+
+                currentColor = value!!.color
+
                 when(value!!.command){
                     "init"->{
                     }
@@ -85,6 +89,8 @@ class PaintView : View {
                     "touchUp"->{
                         touchUp()
                         invalidate()
+                        instruction.command = "init"
+                        drawingInstruction!!.setValue(instruction)
                     }
                 }
             }
@@ -92,7 +98,7 @@ class PaintView : View {
     }
 
     fun clear() {
-        backgroundColor = DEFAULT_COLOR
+        backgroundColor = DEFAULT_BG_COLOR
         paths.clear()
         invalidate()
     }
@@ -113,22 +119,12 @@ class PaintView : View {
 
         }
 
-
         canvas.drawBitmap(mBitmap!!, 0F, 0F, mBitmapPaint)
         canvas.restore()
     }
 
     private fun touchStart(x: Float, y: Float) {
         Log.v("PaintView","touchStart()")
-//        drawingInstruction!!.child("command").setValue("touchStart")
-//        drawingInstruction!!.child("x").setValue(x)
-//        drawingInstruction!!.child("y").setValue(y)
-//
-//        val instruction: Instruction = Instruction()
-//        instruction.command = "touchStart"
-//        instruction.x = x
-//        instruction.y = y
-//        drawingInstruction!!.setValue(instruction)
 
         mPath = Path()
         var fp: FingerPath = FingerPath(currentColor!!, strokeWidth!!, mPath!!)
@@ -158,56 +154,54 @@ class PaintView : View {
 
     private fun touchUp() {
         Log.v("PaintView","touchUp()")
-//        drawingInstruction!!.child("command").setValue("touchUp")
-//        drawingInstruction!!.child("x").setValue(x)
-//        drawingInstruction!!.child("y").setValue(y)
-//        val instruction: Instruction = Instruction()
-//        instruction.command = "touchUp"
-//        instruction.x = x
-//        instruction.y = y
-//        drawingInstruction!!.setValue(instruction)
 
         mPath!!.lineTo(mX!!,mY!!)
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        var x = event!!.getX()
-        var y = event!!.getY()
+        val x = event!!.getX()
+        val y = event.getY()
 
         Log.v("PaintView","onTouchEvent()")
 
-        val instruction: Instruction = Instruction()
 
+        instruction.x = x
+        instruction.y = y
+        instruction.color = currentColor
 
 
         when(event.action){
             MotionEvent.ACTION_DOWN -> {
                 instruction.command = "touchStart"
-                instruction.x = x
-                instruction.y = y
                 drawingInstruction!!.setValue(instruction)
+
                 touchStart(x,y)
                 invalidate()
             }
             MotionEvent.ACTION_MOVE -> {
                 instruction.command = "touchMove"
-                instruction.x = x
-                instruction.y = y
                 drawingInstruction!!.setValue(instruction)
+
                 touchMove(x,y)
                 invalidate()
             }
             MotionEvent.ACTION_UP -> {
                 instruction.command = "touchUp"
-                instruction.x = x
-                instruction.y = y
                 drawingInstruction!!.setValue(instruction)
+
                 touchUp()
                 invalidate()
+                instruction.command = "init"
+                drawingInstruction!!.setValue(instruction)
+
             }
 
         }
         return true
+    }
+
+    fun changeColor(color : String){
+        currentColor = Color.parseColor(color)
     }
 
 }

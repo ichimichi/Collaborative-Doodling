@@ -1,11 +1,10 @@
 package com.softwareengineeringproject.collaborativedoodling.activity
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
-import com.google.firebase.database.FirebaseDatabase
 import com.softwareengineeringproject.collaborativedoodling.R
-import com.softwareengineeringproject.collaborativedoodling.model.Instruction
 import kotlinx.android.synthetic.main.activity_doodling.*
 
 class DoodlingActivity : AppCompatActivity() {
@@ -18,18 +17,29 @@ class DoodlingActivity : AppCompatActivity() {
         windowManager.defaultDisplay.getMetrics(metrics)
         paintView.init(metrics)
 
+        clearBtn.setOnClickListener {
+            paintView.clear()
+        }
 
+        colorRedBtn.setOnClickListener {
+            paintView.changeColor("#F44336")
+        }
 
-    }
+        colorCyanBtn.setOnClickListener {
+            paintView.changeColor("#03A9F4")
+        }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        val database = FirebaseDatabase.getInstance()
-        val drawingInstruction = database.getReference("drawingInstruction")
-        val instruction: Instruction = Instruction()
-        instruction.command = "init"
-        instruction.x = 0.0F
-        instruction.y = 0.0F
-        drawingInstruction.setValue(instruction)
+        colorGreenBtn.setOnClickListener {
+            paintView.changeColor("#4CAF50")
+        }
+
+        colorWhiteBtn.setOnClickListener {
+            paintView.changeColor("#FFFFFF")
+        }
+
+        colorBlackBtn.setOnClickListener {
+            paintView.changeColor("#000000")
+        }
+
     }
 }

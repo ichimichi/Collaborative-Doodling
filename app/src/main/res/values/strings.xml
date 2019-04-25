@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Collaborative Doodling</string>
+    <string name="cyan">#03A9F4</string>
+    <string name="red">#F44336</string>
+    <string name="green">#4CAF50</string>
+    <string name="black">#000000</string>
+    <string name="white">#FFFFFF</string>
 </resources>
