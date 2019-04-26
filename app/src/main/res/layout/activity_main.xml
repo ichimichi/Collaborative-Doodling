@@ -7,15 +7,170 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/pencilAV"
+
+    <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:lottie_rawRes="@raw/pencil"
-        app:lottie_autoPlay="true"
+        app:layout_constraintBottom_toTopOf="@+id/flex2"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading11"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/C.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading12"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/O.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading13"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/L.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading14"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/L.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading15"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/A.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading16"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/B.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading17"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/O.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading18"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/R.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading19"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/A.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading110"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/T.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading111"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/I.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading112"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/V.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading113"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/E.json"
+            app:lottie_autoPlay="true"/>
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flex2"
+        app:justifyContent="space_around"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@+id/titleTV"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading21"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/D.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading22"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/O.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading23"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/O.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading24"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/D.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading25"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/L.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading26"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/I.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading27"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/N.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/heading28"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/G.json"
+            app:lottie_autoPlay="true"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            app:lottie_fileName="Mobilo/BlinkingCursor.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"/>
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <!--<com.airbnb.lottie.LottieAnimationView-->
+        <!--android:id="@+id/pencilAV"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:lottie_rawRes="@raw/pencil"-->
+        <!--app:lottie_autoPlay="true"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>-->
 
     <TextView
         android:text="Welcome Doodler"
@@ -28,8 +183,8 @@
         android:layout_marginStart="8dp"
         android:textSize="18sp"
         android:textAlignment="center" android:gravity="center"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginTop="120dp" app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginTop="224dp" app:layout_constraintTop_toTopOf="parent"/>
 
 
     <Button
@@ -37,12 +192,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/profileBtn"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/titleTV"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="64dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="64dp" app:layout_constraintHorizontal_bias="0.0"/>
+        android:layout_marginEnd="64dp" app:layout_constraintHorizontal_bias="1.0"/>
 
     <Button
         android:text="Start Doodling"
@@ -54,7 +209,7 @@
         android:layout_marginStart="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="64dp"
-        app:layout_constraintHorizontal_bias="0.0"/>
+        app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="4dp"/>
     <Button
         android:text="Saved Doodle"
         android:layout_width="match_parent"
@@ -64,5 +219,5 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="64dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="64dp" app:layout_constraintHorizontal_bias="0.0"/>
+        android:layout_marginEnd="64dp" app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="4dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
