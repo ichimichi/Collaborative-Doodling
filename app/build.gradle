@@ -48,5 +48,8 @@ dependencies {
     // Lottie
     implementation 'com.airbnb.android:lottie:3.0.1'
 
+    // FlexBox Layout
+    implementation 'com.google.android:flexbox:1.1.0'
+
 }
 apply plugin: 'com.google.gms.google-services'
