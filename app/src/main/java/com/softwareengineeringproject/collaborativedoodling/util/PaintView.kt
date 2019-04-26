@@ -15,10 +15,10 @@ import android.graphics.Bitmap
 class PaintView : View {
 
     companion object {
-        var BRUSH_SIZE = 10.0F;
+        var BRUSH_SIZE = 10.0F
         val DEFAULT_COLOR = Color.RED
         val DEFAULT_BG_COLOR = Color.WHITE
-        val TOUCH_TOLERANCE: Float = 4.0F;
+        val TOUCH_TOLERANCE: Float = 4.0F
     }
 
     private var mX: Float? = null
@@ -50,7 +50,7 @@ class PaintView : View {
         mPaint!!.alpha = 0xff
     }
 
-    fun init(metrics: DisplayMetrics) {
+    fun init(metrics: DisplayMetrics, room : String) {
         Log.v("PaintView","init()")
         val height = metrics.heightPixels
         val width = metrics.widthPixels
@@ -62,7 +62,12 @@ class PaintView : View {
         strokeWidth = BRUSH_SIZE
 
         database = FirebaseDatabase.getInstance()
-        drawingInstruction = database!!.getReference("drawingInstruction")
+        drawingInstruction = database!!.getReference(room).child("drawingInstruction")
+
+        instruction.x = 0F
+        instruction.y = 0F
+        instruction.command = "init"
+        drawingInstruction!!.setValue(instruction)
 
         drawingInstruction!!.addValueEventListener( object: ValueEventListener {
             override fun onCancelled(error: DatabaseError) {

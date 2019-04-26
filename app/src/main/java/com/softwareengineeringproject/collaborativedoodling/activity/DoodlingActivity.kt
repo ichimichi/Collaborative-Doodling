@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 import com.softwareengineeringproject.collaborativedoodling.R
 import kotlinx.android.synthetic.main.activity_doodling.*
 import android.graphics.Bitmap
@@ -29,22 +27,29 @@ import java.util.*
 
 
 class DoodlingActivity : AppCompatActivity() {
+    companion object {
+        const val ROOM_NAME = "ROOM_NAME"
+    }
 
     private val database = FirebaseDatabase.getInstance()
-    private val activeUsers = database.getReference("activeUsers")
-    private val user = FirebaseAuth.getInstance().currentUser
-    private val key = activeUsers.child(user!!.uid)
+    private lateinit var room: DatabaseReference
+    private var user: FirebaseUser? = null
+    private lateinit var activeUsers: DatabaseReference
+    private lateinit var key: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doodling)
-
+        room = database.getReference(intent.getStringExtra(ROOM_NAME))
+        user = FirebaseAuth.getInstance().currentUser
+        activeUsers = room.child("activeUsers")
+        key = activeUsers.child(user!!.uid)
         key.setValue(user!!.displayName)
 
 
         val metrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(metrics)
-        paintView.init(metrics)
+        paintView.init(metrics, intent.getStringExtra(ROOM_NAME))
 
         activeUsers.addValueEventListener(newUserEventListener)
 
@@ -92,7 +97,7 @@ class DoodlingActivity : AppCompatActivity() {
 
             activeUsersListTV.text = ""
 
-            for( user: String in listOfActiveUsers){
+            for (user: String in listOfActiveUsers) {
                 activeUsersListTV.append("$user\n")
             }
 
