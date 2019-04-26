@@ -8,14 +8,14 @@
     tools:context=".activity.MainActivity">
 
     <!--<LinearLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="248dp"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/titleTV"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:orientation="horizontal" android:layout_marginTop="272dp" app:layout_constraintHorizontal_bias="0.392">-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="248dp"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/titleTV"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:orientation="horizontal" android:layout_marginTop="272dp" app:layout_constraintHorizontal_bias="0.392">-->
     <!--</LinearLayout>-->
     <TextView
         android:text="Welcome"
@@ -23,44 +23,48 @@
         android:layout_height="80dp"
         android:id="@+id/titleTV"
         android:layout_marginTop="56dp"
-        app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-        android:textSize="18sp" android:textAlignment="center" android:gravity="center"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        android:textAlignment="center" android:gravity="center"/>
 
-    <Button
-        android:text="Feed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/feedBtn"
-        android:layout_marginTop="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/savedDoodleBtn" app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501" app:layout_constraintVertical_bias="0.01"/>
+
     <Button
         android:text="Profile"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/profileBtn"
-        android:layout_marginTop="76dp"
-        app:layout_constraintTop_toBottomOf="@+id/titleTV" app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="64dp"/>
 
     <Button
-        android:text="New Doodle"
-        android:layout_width="wrap_content"
+        android:text="Start Doodling"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/newDoodleBtn"
-        android:layout_marginTop="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/profileBtn" app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/profileBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="64dp"
         app:layout_constraintHorizontal_bias="0.503"/>
     <Button
         android:text="Saved Doodle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/savedDoodleBtn"
-        android:layout_marginTop="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/newDoodleBtn" app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/newDoodleBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="64dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
