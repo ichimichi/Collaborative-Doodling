@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".activity.sessionOptionActivity">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/pencilAV"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="64dp"
+        app:lottie_rawRes="@raw/stroke_1"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
