@@ -38,3 +38,17 @@ pencilAV.setOnClickListener {
     pencilAV.resumeAnimation()
 }
 ```
+```kotlin
+drawingInstruction!!.addValueEventListener( object: ValueEventListener {
+    
+    override fun onCancelled(error: DatabaseError) {
+        Log.w("error", "Failed to read value.", error.toException())
+    }
+
+    override fun onDataChange(dataSnapshot: DataSnapshot) {
+        val value = dataSnapshot.getValue(Instruction::class.java)
+        Log.d("command", value.toString())
+        // execute commands
+    }
+})
+ ```
