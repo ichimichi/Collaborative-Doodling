@@ -21,11 +21,20 @@ class SavedDoodleAdapter : RecyclerView.Adapter<CustomViewHolder>()
 }
 
 ```
-
+```kotlin
+saved_doodleRV.adapter = SavedDoodleAdapter()
+```
 * **Observer Design Pattern**
 ```kotlin        
 newDoodleBtn.setOnClickListener {
     val intent = Intent(this,sessionOptionActivity::class.java)
     startActivity(intent)
+}
+```
+```kotlin
+pencilAV.setOnClickListener {
+    index = ((index + 1) % strokeList.size )
+    pencilAV.setAnimation(strokeList[index])
+    pencilAV.resumeAnimation()
 }
 ```
