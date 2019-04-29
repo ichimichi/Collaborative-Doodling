@@ -9,22 +9,33 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars"
-        android:id="@+id/profilePic" android:layout_marginTop="32dp"
-        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" app:srcCompat="@drawable/fui_ic_googleg_color_24dp"/>
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars"
+        android:id="@+id/profilePic"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/fui_ic_googleg_color_24dp"/>
+
     <TextView
-        android:text="TextView"
+        tools:text="User Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/nameTV" android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/profilePic"
+        android:id="@+id/nameTV" android:layout_marginTop="32dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/profilePic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
     <TextView
-        android:text="TextView"
+        tools:text="Email-ID"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:id="@+id/emailTV" app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"
+        android:id="@+id/emailTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/nameTV"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

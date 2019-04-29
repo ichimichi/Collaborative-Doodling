@@ -50,8 +50,8 @@ class PaintView : View {
         mPaint!!.alpha = 0xff
     }
 
-    fun init(metrics: DisplayMetrics, room : String) {
-        Log.v("PaintView","init()")
+    fun init(metrics: DisplayMetrics, room: String) {
+        Log.v("PaintView", "init()")
         val height = metrics.heightPixels
         val width = metrics.widthPixels
 
@@ -69,7 +69,7 @@ class PaintView : View {
         instruction.command = "init"
         drawingInstruction!!.setValue(instruction)
 
-        drawingInstruction!!.addValueEventListener( object: ValueEventListener {
+        drawingInstruction!!.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 Log.w("error", "Failed to read value.", error.toException())
             }
@@ -80,26 +80,26 @@ class PaintView : View {
 
 
 
-                when(value!!.command){
-                    "init"->{
+                when (value!!.command) {
+                    "init" -> {
                     }
-                    "touchStart"->{
-                        touchStart(value.x!!,value.y!!)
+                    "touchStart" -> {
+                        touchStart(value.x!!, value.y!!)
                         invalidate()
 
                     }
-                    "touchMove"->{
-                        touchMove(value.x!!,value.y!!)
+                    "touchMove" -> {
+                        touchMove(value.x!!, value.y!!)
                         invalidate()
 
                     }
-                    "touchUp"->{
+                    "touchUp" -> {
                         touchUp()
                         invalidate()
                         instruction.command = "init"
                         drawingInstruction!!.setValue(instruction)
                     }
-                    "changeColor"->{
+                    "changeColor" -> {
                         currentColor = value!!.color
                     }
                 }
@@ -114,8 +114,7 @@ class PaintView : View {
     }
 
     override fun onDraw(canvas: Canvas?) {
-//        super.onDraw(canvas)
-        Log.v("PaintView","onDraw()")
+        Log.v("PaintView", "onDraw()")
 
         canvas!!.save()
         mCanvas!!.drawColor(backgroundColor!!)
@@ -134,7 +133,7 @@ class PaintView : View {
     }
 
     private fun touchStart(x: Float, y: Float) {
-        Log.v("PaintView","touchStart()")
+        Log.v("PaintView", "touchStart()")
 
         mPath = Path()
         var fp: FingerPath = FingerPath(currentColor!!, strokeWidth!!, mPath!!)
@@ -147,7 +146,7 @@ class PaintView : View {
     }
 
     private fun touchMove(x: Float, y: Float) {
-        Log.v("PaintView","touchMove()")
+        Log.v("PaintView", "touchMove()")
 
         var dx: Float = Math.abs(x - mX!!)
         var dy: Float = Math.abs(y - mY!!)
@@ -163,35 +162,35 @@ class PaintView : View {
     }
 
     private fun touchUp() {
-        Log.v("PaintView","touchUp()")
+        Log.v("PaintView", "touchUp()")
 
-        mPath!!.lineTo(mX!!,mY!!)
+        mPath!!.lineTo(mX!!, mY!!)
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         val x = event!!.getX()
         val y = event.getY()
 
-        Log.v("PaintView","onTouchEvent()")
+        Log.v("PaintView", "onTouchEvent()")
 
 
         instruction.x = x
         instruction.y = y
 
 
-        when(event.action){
+        when (event.action) {
             MotionEvent.ACTION_DOWN -> {
                 instruction.command = "touchStart"
                 drawingInstruction!!.setValue(instruction)
 
-                touchStart(x,y)
+                touchStart(x, y)
                 invalidate()
             }
             MotionEvent.ACTION_MOVE -> {
                 instruction.command = "touchMove"
                 drawingInstruction!!.setValue(instruction)
 
-                touchMove(x,y)
+                touchMove(x, y)
                 invalidate()
             }
             MotionEvent.ACTION_UP -> {
@@ -209,11 +208,16 @@ class PaintView : View {
         return true
     }
 
-    fun changeColor(color : String){
+    fun changeColor(color: String) {
         currentColor = Color.parseColor(color)
         instruction.color = currentColor
         instruction.command = "changeColor"
         drawingInstruction!!.setValue(instruction)
+    }
+
+    fun getBitmap() : Bitmap
+    {
+        return mBitmap!!
     }
 
 }
