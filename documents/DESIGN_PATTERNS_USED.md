@@ -6,6 +6,10 @@
 ```kotlin
 val user = FirebaseAuth.getInstance()
 ```
+```kotlin
+database = FirebaseDatabase.getInstance()
+```
+
 * **Adapter Design Pattern**
 
 ```kotlin
