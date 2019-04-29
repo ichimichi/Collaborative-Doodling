@@ -7,6 +7,8 @@
 * [Abstract](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/ABSTRACT.md)
 * [Introduction](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/INTRODUCTION.md)
     * [Motivation](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/MOTIVATION.md)
+    * [Design Patterns Used](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/DESIGN_PATTERNS_USED.md)
+
     * [Objectives](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/OBJECTIVES.md)
     * [Methodology](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/METHODOLOGY.md)
     * [Main Contributions](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/MAIN_CONTRIBUTIONS.md)
