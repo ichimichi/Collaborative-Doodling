@@ -7,7 +7,7 @@ The implementation of the application can be explained in two parts
 The front end is the visible area of the application where the user interacts and back end containing all of the code that drives the application.
 
 ### Front End ###
-
+#### XML ####
 The front end gives an easy and user friendly interface to users
 which is done with the help of **XML (eXtensible Markup Language)** in Android Studio 3.4.
 All the UI and layout of our app is designed using XML. Unlike Kotlin (which is Back Bone of your app), 
@@ -63,6 +63,7 @@ and the corresponding Profile Layout when viewed by a user
 <img width=300 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Screenshot_5.png?raw=true"></img>
 
 ### Back End ###
+
 #### Kotlin ####
 Kotlin is a programming language introduced by JetBrains, the official designer of the most intelligent Java IDE, named Intellij IDEA. 
 Kotlin is a strongly statically typed language that runs on JVM. In 2017, Google announced Kotlin is an official language for android development. 
@@ -165,7 +166,8 @@ The Firebase Realtime Database is a cloud-hosted NoSQL database that lets us sto
 The Realtime Database is really just one big JSON object that the developers can manage in realtime.
 
 Our Realtime Database in action
-<img width=400 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Firebase_3.gif?raw=true"></img>
+
+<img width=500 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Firebase_3.gif?raw=true"></img>
 
 With just a single API, the Firebase database provides your app with both the current value of the data and any updates to that data.
 ```kotlin
@@ -253,4 +255,4 @@ Using Firebase Authentication makes building secure authentication systems easie
 
 List of users signed up in our application
 
-<img width=300 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Firebase_1.png?raw=true"></img>
+<img width=650 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Firebase_1.png?raw=true"></img>
