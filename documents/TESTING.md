@@ -1,0 +1,3 @@
+# TESTING #
+
+We have not used any testing tool for testing our project. However, we have tested it manually. We tested the ability of the software application to update the drawings in real time. We have performed testing for two or more users to be able to enter the same room and give stheir input. We have tested the speed of drawing, with which a user can draw without affecting the quality of the image. 
