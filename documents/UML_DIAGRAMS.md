@@ -3,7 +3,7 @@
 # UML DIAGRAMS #
 
 ### Use-Case Diagram ###
-<img src=""></img>
+<img src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/UseCase.png?raw=true"></img>
 
 ### Class Diagrams ###
 
