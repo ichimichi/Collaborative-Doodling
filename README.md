@@ -14,4 +14,4 @@
 * [Implementation Details](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/IMPLEMENTATION_DETAILS.md)
 * [Design Patterns Used](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/DESIGN_PATTERNS_USED.md)
 * [Conclusion](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/CONCLUSION.md)
-* [Bibliography](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/BIBILIOGRAPHY.md)
+* [References](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/REFERENCES.md)
