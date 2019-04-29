@@ -63,8 +63,8 @@ and the corresponding Profile Layout when viewed by a user
 <img width=300 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Screenshot_5.png?raw=true"></img>
 
 ### Back End ###
-
-**Kotlin** is a programming language introduced by JetBrains, the official designer of the most intelligent Java IDE, named Intellij IDEA. 
+#### Kotlin ####
+Kotlin is a programming language introduced by JetBrains, the official designer of the most intelligent Java IDE, named Intellij IDEA. 
 Kotlin is a strongly statically typed language that runs on JVM. In 2017, Google announced Kotlin is an official language for android development. 
 Kotlin is an open source programming language that combines object-oriented programming and functional features into a unique platform. 
 
@@ -125,3 +125,132 @@ joinRoomBtn.setOnClickListener
     startActivity(intent)
 }
 ```
+
+#### Firebase ####
+
+In our Application we have used **Realtime Database** and **Authentication** services of Firebase.
+
+Firebase is a mobile and web app development platform that provides developers with a plethora of 
+tools and services to help them develop high-quality apps, grow their user base, and earn more profit.
+
+**Firebase Services**
+
+Firebase Services can be divided into two groups:
+
+* Develop & testyour app
+    * Realtime Database
+    * Authentication
+    * Test Lab
+    * Crashlytics
+    * Cloud Functions
+    * Firestore
+    * Cloud Storage
+    * Performance Monitoring
+    * Crash Reporting
+    * Hosting
+* Grow & Engage your audience
+    * Firebase Analytics
+    * Invites
+    * Cloud Messaging
+    * Predictions
+    * AdMob
+    * Dynamic Links
+    * Adwords
+    * Remote Config
+    * App Indexing
+    
+**Realtime Database**
+
+The Firebase Realtime Database is a cloud-hosted NoSQL database that lets us store and sync between our users in realtime.
+The Realtime Database is really just one big JSON object that the developers can manage in realtime.
+
+Our Realtime Database in action
+<img width=400 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Firebase_3.gif?raw=true"></img>
+
+With just a single API, the Firebase database provides your app with both the current value of the data and any updates to that data.
+```kotlin
+database = FirebaseDatabase.getInstance()
+drawingInstruction = database!!.getReference(room).child("drawingInstruction")
+
+drawingInstruction!!.addValueEventListener(object : ValueEventListener {
+    override fun onCancelled(error: DatabaseError) {
+        Log.w("error", "Failed to read value.", error.toException())
+    }
+
+    override fun onDataChange(dataSnapshot: DataSnapshot) {
+        val value = dataSnapshot.getValue(Instruction::class.java)
+        Log.d("value", value.toString())
+
+        when (value!!.command) {
+            "init" -> {
+            }
+            "touchStart" -> {
+                touchStart(value.x!!, value.y!!)
+                invalidate()
+
+            }
+            "touchMove" -> {
+                touchMove(value.x!!, value.y!!)
+                invalidate()
+
+            }
+            "touchUp" -> {
+                touchUp()
+                invalidate()
+                instruction.command = "init"
+                drawingInstruction!!.setValue(instruction)
+            }
+            "changeColor" -> {
+                currentColor = value!!.color
+            }
+        }
+    }
+})
+```
+
+Realtime syncing makes it easy for our users to access their data from any device, be it web or mobile. 
+Realtime Database also helps our users collaborate with one another.
+
+**Authentication**
+
+Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to our app.
+
+Normally, it would take you months to set up our own authentication system. 
+And even after that, we would need to keep a dedicated team to maintain that system. 
+But if we use Firebase, we can set up the entire system in under 10 lines of code that 
+will handle everything for us, including complex operations like account merging.
+
+```kotlin
+private fun createSignInIntent() {
+    val providers = arrayListOf(
+        AuthUI.IdpConfig.EmailBuilder().build(),
+        AuthUI.IdpConfig.GoogleBuilder().build()
+    )
+
+    val customLayout = AuthMethodPickerLayout.Builder(R.layout.custom_login)
+        .setGoogleButtonId(R.id.googleBtn)
+        .setEmailButtonId(R.id.emailBtn)
+        .build()
+
+    startActivityForResult(
+        AuthUI.getInstance()
+            .createSignInIntentBuilder()
+            .setAvailableProviders(providers)
+            .setAuthMethodPickerLayout(customLayout)
+            .build(),
+        RC_SIGN_IN
+    )
+}
+```
+
+We have authenticate our application's users through the following methods:
+* Email & Password
+* Google
+
+<img width=300 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Screenshot_1.png?raw=true"></img>
+
+Using Firebase Authentication makes building secure authentication systems easier, while also improving the sign-in and onboarding experience for end users.
+
+List of users signed up in our application
+
+<img width=300 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Firebase_1.png?raw=true"></img>
