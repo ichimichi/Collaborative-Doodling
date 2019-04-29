@@ -59,7 +59,7 @@
 											"font": "Arial;13;1",
 											"left": 133,
 											"top": 231,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "PaintView"
 										},
@@ -90,7 +90,7 @@
 									"font": "Arial;13;0",
 									"left": 128,
 									"top": 224,
-									"width": 552,
+									"width": 587.3955078125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFqahdLqljj+bw="
@@ -127,7 +127,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 254,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"underline": true,
 											"text": "+BRUSH_SIZE: Float",
@@ -145,10 +145,10 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 269,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"underline": true,
-											"text": "+DEFAULT_COLOR: Integer",
+											"text": "+DEFAULT_COLOR: Int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -163,10 +163,10 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 284,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"underline": true,
-											"text": "+DEFAULT_BG_COLOR: Integer",
+											"text": "+DEFAULT_BG_COLOR: Int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -181,7 +181,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 299,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"underline": true,
 											"text": "+TOUCH_TOLERANCE: Float",
@@ -199,7 +199,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 314,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-mX: Float",
 											"horizontalAlignment": 0
@@ -216,7 +216,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 329,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-mY: Float",
 											"horizontalAlignment": 0
@@ -233,7 +233,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 344,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-mPath: Path",
 											"horizontalAlignment": 0
@@ -250,7 +250,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 359,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-mPaint: Paint",
 											"horizontalAlignment": 0
@@ -267,7 +267,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 374,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-paths: ArrayList<FingerPath>",
 											"horizontalAlignment": 0
@@ -284,7 +284,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 389,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-currentColor: Integer",
 											"horizontalAlignment": 0
@@ -301,7 +301,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 404,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-backgroundColor: Integer",
 											"horizontalAlignment": 0
@@ -318,7 +318,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 419,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-strokeWidth: Float",
 											"horizontalAlignment": 0
@@ -335,7 +335,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 434,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-mBitmap: Bitmap",
 											"horizontalAlignment": 0
@@ -352,7 +352,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 449,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-mCanvas: Canvas",
 											"horizontalAlignment": 0
@@ -369,7 +369,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 464,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-database: FirebaseDatabase",
 											"horizontalAlignment": 0
@@ -386,7 +386,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 479,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-drawingInstruction: DatabaseReference",
 											"horizontalAlignment": 0
@@ -403,7 +403,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 494,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-instruction: Instruction",
 											"horizontalAlignment": 0
@@ -412,7 +412,7 @@
 									"font": "Arial;13;0",
 									"left": 128,
 									"top": 249,
-									"width": 552,
+									"width": 587.3955078125,
 									"height": 263
 								},
 								{
@@ -437,7 +437,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 517,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "+init(metrics: DisplayMetrics, room: String)",
 											"horizontalAlignment": 0
@@ -454,7 +454,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 532,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "+clear()",
 											"horizontalAlignment": 0
@@ -471,7 +471,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 547,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-onDraw(canvas: Canvas)",
 											"horizontalAlignment": 0
@@ -488,7 +488,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 562,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-touchStart(x: Float, y: Float)",
 											"horizontalAlignment": 0
@@ -505,7 +505,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 577,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-touchMove(x: Float, y: Float)",
 											"horizontalAlignment": 0
@@ -522,7 +522,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 592,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-touchUp()",
 											"horizontalAlignment": 0
@@ -539,7 +539,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 607,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "-onTouchEvent(event: MotionEvent)",
 											"horizontalAlignment": 0
@@ -556,7 +556,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 622,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "+changeColor(color: String)",
 											"horizontalAlignment": 0
@@ -573,7 +573,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 637,
-											"width": 542,
+											"width": 577.3955078125,
 											"height": 13,
 											"text": "+getBitmap()",
 											"horizontalAlignment": 0
@@ -582,7 +582,7 @@
 									"font": "Arial;13;0",
 									"left": 128,
 									"top": 512,
-									"width": 552,
+									"width": 587.3955078125,
 									"height": 143
 								},
 								{
@@ -618,7 +618,7 @@
 							"containerChangeable": true,
 							"left": 128,
 							"top": 224,
-							"width": 552,
+							"width": 587.3955078125,
 							"height": 456,
 							"nameCompartment": {
 								"$ref": "AAAAAAFqahdLqVjiRZw="
@@ -664,7 +664,7 @@
 							},
 							"name": "DEFAULT_COLOR",
 							"isStatic": true,
-							"type": "Integer"
+							"type": "Int"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -674,7 +674,7 @@
 							},
 							"name": "DEFAULT_BG_COLOR",
 							"isStatic": true,
-							"type": "Integer"
+							"type": "Int"
 						},
 						{
 							"_type": "UMLAttribute",
