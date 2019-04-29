@@ -13,5 +13,7 @@
     * [Document Outline](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/DOCUMENT_OUTLINE.md)
 * [Implementation Details](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/IMPLEMENTATION_DETAILS.md)
 * [Design Patterns Used](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/DESIGN_PATTERNS_USED.md)
+* [User Manual](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/USER_MANUAL.md)
+* [Testing](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/TESTING.md)
 * [Conclusion](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/CONCLUSION.md)
 * [References](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/REFERENCES.md)
