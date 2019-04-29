@@ -21,6 +21,7 @@ import java.nio.file.Files.delete
 import java.nio.file.Files.exists
 import android.os.Environment.DIRECTORY_PICTURES
 import android.os.Environment.getExternalStoragePublicDirectory
+import com.softwareengineeringproject.collaborativedoodling.util.PaintView
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*
@@ -110,22 +111,13 @@ class DoodlingActivity : AppCompatActivity() {
         key.removeValue()
     }
 
-    fun takeScreenShot(view: View): Bitmap? {
-        // configuramos para que la view almacene la cache en una imagen
-        view.setDrawingCacheEnabled(true)
-        view.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW)
-        view.buildDrawingCache()
-        if (view.getDrawingCache() == null) return null // Verificamos antes de que no sea null
-        // utilizamos esa cache, para crear el bitmap que tendra la imagen de la view actual
-        val snapshot = Bitmap.createBitmap(view.getDrawingCache())
-        view.setDrawingCacheEnabled(false)
-        view.destroyDrawingCache()
+    fun takeScreenShot(view: PaintView): Bitmap? {
+        val snapshot = Bitmap.createBitmap(view.getBitmap())
         return snapshot
     }
 
     private fun save(finalBitmap: Bitmap) {
         val root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString()
-        println("$root Root value in saveImage Function")
         val myDir = File("$root/CollaborativeDoodling")
 
         if (!myDir.exists()) {
@@ -162,10 +154,6 @@ class DoodlingActivity : AppCompatActivity() {
                 }
             })
 
-        val Image_path = "${Environment.getExternalStorageDirectory()}/Pictures/CameraFilter/$iname"
-        val files = myDir.listFiles()
-        val numberOfImages = files.size
-        println("Total images in Folder $numberOfImages")
     }
 
 }
