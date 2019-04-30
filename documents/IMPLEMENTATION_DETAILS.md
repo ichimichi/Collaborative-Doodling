@@ -256,3 +256,20 @@ Using Firebase Authentication makes building secure authentication systems easie
 List of users signed up in our application
 
 <img width=650 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Firebase_1.png?raw=true"></img>
+
+**Version Control**
+
+<img width=400 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Gitgithublogo.jpg?raw=true"></img>
+
+We have extensively used Git version control in our prject right from the start. 
+We have also created a remote repository on Github, where we have all the commits 
+and the documentation of this report.
+
+<img width=650 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Repository.png?raw=true"></img>
+
+Version control systems are a category of software tools that help a software 
+team manage changes to source code over time. Version control software keeps track 
+of every modification to the code in a special kind of database. If a mistake is made, 
+developers can turn back the clock and compare earlier versions of the code to help 
+fix the mistake while minimizing disruption to all team members.
+
