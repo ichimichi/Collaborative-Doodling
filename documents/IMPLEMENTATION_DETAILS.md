@@ -265,6 +265,8 @@ We have extensively used Git version control in our prject right from the start.
 We have also created a remote repository on Github, where we have all the commits 
 and the documentation of this report.
 
+[link to Github repository here](https://github.com/ichimichi/Collaborative-Doodling)
+
 <img width=650 src="https://github.com/ichimichi/Collaborative-Doodling/blob/master/documents/images/Repository.png?raw=true"></img>
 
 Version control systems are a category of software tools that help a software 
