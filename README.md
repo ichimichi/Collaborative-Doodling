@@ -1,6 +1,5 @@
 # Collaborative Doodling #
 
-### ABOUT ###
 
 ### TABLE OF CONTENTS ###
 
@@ -18,3 +17,5 @@
 * [User Manual](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/USER_MANUAL.md)
 * [Conclusion](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/CONCLUSION.md)
 * [References](https://github.com/ichimichi/Collaborative-Doodling/tree/master/documents/REFERENCES.md)
+
+[*link of publised app in playstore*](https://play.google.com/store/apps/details?id=com.softwareengineeringproject.collaborativedoodling)
