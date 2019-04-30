@@ -3,6 +3,7 @@
 # DESIGN PATTERNS USED #
 
 * **Singleton Design Pattern**
+
 ```kotlin
 val user = FirebaseAuth.getInstance()
 ```
@@ -25,16 +26,19 @@ class SavedDoodleAdapter : RecyclerView.Adapter<CustomViewHolder>()
 }
 
 ```
+
 ```kotlin
 saved_doodleRV.adapter = SavedDoodleAdapter()
 ```
 * **Observer Design Pattern**
+
 ```kotlin        
 newDoodleBtn.setOnClickListener {
     val intent = Intent(this,sessionOptionActivity::class.java)
     startActivity(intent)
 }
 ```
+
 ```kotlin
 pencilAV.setOnClickListener {
     index = ((index + 1) % strokeList.size )
@@ -42,6 +46,7 @@ pencilAV.setOnClickListener {
     pencilAV.resumeAnimation()
 }
 ```
+
 ```kotlin
 drawingInstruction!!.addValueEventListener( object: ValueEventListener {
     

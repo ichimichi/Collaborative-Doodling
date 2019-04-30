@@ -1,3 +1,6 @@
-# ABSTRACT #
+# MAIN CONTRIBUTIONS #
 
-This is an abstract
+* Firebase Realtime Database
+* Firebase Authentication
+* Firebase AuthUI
+* Lottie Animations
